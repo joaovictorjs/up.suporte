@@ -3,7 +3,7 @@ using System.Windows.Controls;
 
 namespace up.suporte.Extensions
 {
-	public partial class TextBoxExtensions : TextBox
+	public partial class TextBoxExtensions
 	{
 		public static readonly DependencyProperty PlaceholderProperty = DependencyProperty.RegisterAttached(
 			"Placeholder",
