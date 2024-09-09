@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\Fonts\Roboto-Bold.ttf" />
     <Resource Include="Assets\Fonts\Roboto-Light.ttf" />
     <Resource Include="Assets\Fonts\Roboto-Regular.ttf" />
