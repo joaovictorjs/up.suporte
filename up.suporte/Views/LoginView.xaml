@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="clr-namespace:up.suporte.Extensions"
     xmlns:local="clr-namespace:up.suporte.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
@@ -26,7 +27,14 @@
             Style="{StaticResource TextBlock.Subtitle}"
             Text="Informe suas credenciais" />
 
-        <StackPanel Margin="0,32,0,0" />
+        <StackPanel Margin="0,32,0,0" Orientation="Vertical">
+            <TextBox ext:TextBoxExtensions.Label="Usuário" ext:TextBoxExtensions.Placeholder="admin" />
+
+            <PasswordBox
+                Margin="0,16,0,0"
+                ext:PasswordBoxExtensions.Label="Senha"
+                ext:PasswordBoxExtensions.Placeholder="admin!@#123" />
+        </StackPanel>
 
     </StackPanel>
 
