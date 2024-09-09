@@ -10,7 +10,7 @@
     Title="up.suporte - login"
     Width="800"
     Height="600"
-    Background="{StaticResource BackgroundColor}"
+    Background="{StaticResource BackgroundBrush}"
     ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
