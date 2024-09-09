@@ -5,12 +5,20 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:up.suporte.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:up.suporte.ViewModels"
+    xmlns:views="clr-namespace:up.suporte.Views"
     Title="up.suporte - login"
     Width="800"
     Height="600"
-    Background="{StaticResource Background}"
+    Background="{StaticResource BackgroundColor}"
     ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid />
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModels:LoginViewModel}">
+            <views:LoginView />
+        </DataTemplate>
+    </Window.Resources>
+
+    <ContentControl Content="{Binding CurrentViewModel}" />
 </Window>
