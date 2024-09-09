@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily" Value="{StaticResource RobotoSans}" />
-        <Setter Property="Foreground" Value="{StaticResource TextColor}" />
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
         <Setter Property="FontSize" Value="12.5" />
     </Style>
 
@@ -17,14 +17,14 @@
         x:Key="TextBlock.Subtitle"
         BasedOn="{StaticResource {x:Type TextBlock}}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource SubtitleColor}" />
+        <Setter Property="Foreground" Value="{StaticResource SubtitleBrush}" />
     </Style>
 
     <Style
         x:Key="TextBlock.Placeholder"
         BasedOn="{StaticResource {x:Type TextBlock}}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource SubtitleColor}" />
+        <Setter Property="Foreground" Value="{StaticResource SubtitleBrush}" />
     </Style>
 
     <Style
@@ -32,6 +32,6 @@
         BasedOn="{StaticResource {x:Type TextBlock}}"
         TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="11" />
-        <Setter Property="Foreground" Value="{StaticResource LabelColor}" />
+        <Setter Property="Foreground" Value="{StaticResource LabelBrush}" />
     </Style>
 </ResourceDictionary>
