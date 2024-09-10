@@ -1,13 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Color x:Key="BackgroundColor">#111827</Color>
-    <Color x:Key="TextColor">#f9fafb</Color>
-    <Color x:Key="SubtitleColor">#4b5563</Color>
-    <Color x:Key="LabelColor">#9ca3af</Color>
-    <Color x:Key="TextBoxColor">#374151</Color>
-
-    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
-    <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}" />
-    <SolidColorBrush x:Key="SubtitleBrush" Color="{StaticResource SubtitleColor}" />
-    <SolidColorBrush x:Key="LabelBrush" Color="{StaticResource LabelColor}" />
-    <SolidColorBrush x:Key="TextBoxBrush" Color="{StaticResource TextBoxColor}" />
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#111827" />
+    <SolidColorBrush x:Key="TextBrush" Color="#f9fafb" />
+    <SolidColorBrush x:Key="SubtitleBrush" Color="#4b5563" />
+    <SolidColorBrush x:Key="LabelBrush" Color="#9ca3af" />
+    <SolidColorBrush x:Key="TextBoxBrush" Color="#374151" />
+    <SolidColorBrush x:Key="ButtonBrush" Color="#0891b2" />
 </ResourceDictionary>
