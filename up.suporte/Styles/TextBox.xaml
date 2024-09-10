@@ -41,6 +41,7 @@
                             CornerRadius="4">
                             <Grid>
                                 <TextBlock
+                                    Name="Placeholder"
                                     Margin="{TemplateBinding Padding}"
                                     VerticalAlignment="Center"
                                     Style="{StaticResource TextBlock.Placeholder}"
@@ -64,6 +65,8 @@
                                     <SolidColorBrush Opacity="0.5" Color="{StaticResource TextBoxColor}" />
                                 </Setter.Value>
                             </Setter>
+
+                            <Setter TargetName="Placeholder" Property="Visibility" Value="Hidden" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
