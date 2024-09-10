@@ -34,6 +34,8 @@
                 x:Name="Pass"
                 Margin="0,16,0,0"
                 ext:PasswordBoxExtensions.Label="Senha" />
+
+            <Button Margin="0,16,0,0" Content="Entrar" />
         </StackPanel>
 
     </StackPanel>
