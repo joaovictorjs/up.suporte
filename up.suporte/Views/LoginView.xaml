@@ -10,39 +10,51 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <StackPanel
-        Width="240"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Orientation="Vertical">
+    <Grid>
+        <Button
+            Margin="16"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Style="{StaticResource Button.IconButton}">
+            <Image Height="16" Source="{StaticResource Setting16x16}" />
+        </Button>
 
-        <Image
-            Height="64"
-            Margin="0,0,0,32"
-            Source="pack://application:,,,/Assets/Images/Icon64.ico" />
-
-        <TextBlock
+        <StackPanel
+            Width="240"
             HorizontalAlignment="Center"
-            Style="{StaticResource TextBlock.Title}"
-            Text="LOGIN" />
+            VerticalAlignment="Center"
+            Orientation="Vertical">
 
-        <TextBlock
-            Margin="0,8,0,0"
-            HorizontalAlignment="Center"
-            Style="{StaticResource TextBlock.Subtitle}"
-            Text="Informe suas credenciais" />
+            <Image
+                Height="64"
+                Margin="0,0,0,32"
+                Source="pack://application:,,,/Assets/Images/Icon64.ico" />
 
-        <StackPanel Margin="0,32,0,0" Orientation="Vertical">
-            <TextBox ext:TextBoxExtensions.Label="Usuário" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                Style="{StaticResource TextBlock.Title}"
+                Text="LOGIN" />
 
-            <PasswordBox
-                x:Name="Pass"
-                Margin="0,16,0,0"
-                ext:PasswordBoxExtensions.Label="Senha" />
+            <TextBlock
+                Margin="0,8,0,0"
+                HorizontalAlignment="Center"
+                Style="{StaticResource TextBlock.Subtitle}"
+                Text="Informe suas credenciais" />
 
-            <Button Margin="0,16,0,0" Content="Entrar" />
+            <StackPanel Margin="0,32,0,0" Orientation="Vertical">
+                <TextBox ext:TextBoxExtensions.Label="Usuário" />
+
+                <PasswordBox
+                    x:Name="Pass"
+                    Margin="0,16,0,0"
+                    ext:PasswordBoxExtensions.Label="Senha" />
+
+                <Button Margin="0,16,0,0" Content="Entrar" />
+            </StackPanel>
         </StackPanel>
 
-    </StackPanel>
+
+    </Grid>
+
 
 </UserControl>
