@@ -12,6 +12,7 @@
     <None Remove="Assets\Fonts\Roboto-Bold.ttf" />
     <None Remove="Assets\Fonts\Roboto-Light.ttf" />
     <None Remove="Assets\Fonts\Roboto-Regular.ttf" />
+    <None Remove="Assets\Images\Icon64.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
     <Resource Include="Assets\Fonts\Roboto-Bold.ttf" />
     <Resource Include="Assets\Fonts\Roboto-Light.ttf" />
     <Resource Include="Assets\Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Assets\Images\Icon64.ico" />
   </ItemGroup>
 
 </Project>
