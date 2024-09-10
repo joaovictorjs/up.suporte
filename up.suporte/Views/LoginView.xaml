@@ -30,7 +30,10 @@
         <StackPanel Margin="0,32,0,0" Orientation="Vertical">
             <TextBox ext:TextBoxExtensions.Label="Usuário" />
 
-            <PasswordBox Margin="0,16,0,0" ext:PasswordBoxExtensions.Label="Senha" />
+            <PasswordBox
+                x:Name="Pass"
+                Margin="0,16,0,0"
+                ext:PasswordBoxExtensions.Label="Senha" />
         </StackPanel>
 
     </StackPanel>
