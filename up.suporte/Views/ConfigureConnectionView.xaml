@@ -10,15 +10,15 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
-        <!--
+
         <Button
             Margin="16"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Style="{StaticResource Button.IconButton}">
-            <Image Height="16" Source="{StaticResource }" />
+            <Image Height="16" Source="{StaticResource ArrowLeft16x16}" />
         </Button>
-        -->
+
 
         <StackPanel
             Width="240"
