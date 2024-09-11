@@ -15,6 +15,7 @@
             Margin="16"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Command="{Binding NavigateToLoginCommand}"
             Style="{StaticResource Button.IconButton}">
             <Image Height="16" Source="{StaticResource ArrowLeft16x16}" />
         </Button>
