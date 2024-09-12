@@ -38,6 +38,7 @@ namespace up.suporte.ViewModels
         {
             _configFileService.Write();
             MessageBox.Show("Arquivo de configuração salvo com sucesso!");
+            _navService.Navigate();
         }
 
         private bool CanWrite(object? parameter) => _configFileService.IsOk();
