@@ -43,7 +43,16 @@ namespace up.suporte
                     )
                 );
                 services.AddTransient<LoginViewModel>(local => new LoginViewModel(local.GetRequiredService<NavigationService<ConfigureConnectionViewModel>>()));
-                services.AddTransient<ConfigureConnectionViewModel>(local => new ConfigureConnectionViewModel(local.GetRequiredService<NavigationService<LoginViewModel>>()));
+                //services.AddTransient<ConfigureConnectionViewModel>(local => new ConfigureConnectionViewModel(local.GetRequiredService<NavigationService<LoginViewModel>>()));
+
+                services.AddTransient<ConfigureConnectionViewModel>(local =>
+                {
+                    ConfigFileStore store = new ConfigFileStore();
+                    IConfigFileService configFileService = new ConfigFileService(store);
+                    NavigationService<LoginViewModel> navigationService = local.GetRequiredService<NavigationService<LoginViewModel>>();
+
+                    return new ConfigureConnectionViewModel(navigationService, configFileService, store);
+                });
 
                 services.AddSingleton<LoginWindow>(local => new LoginWindow()
                 {
