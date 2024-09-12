@@ -2,11 +2,11 @@
 
 namespace up.suporte.Stores
 {
-	public interface IPasswordStore : IDisposable
-	{
-		public SecureString Password
-		{
-			get;
-		}
-	}
+    public interface IPasswordStore : IDisposable
+    {
+        public SecureString Password
+        {
+            get;
+        }
+    }
 }

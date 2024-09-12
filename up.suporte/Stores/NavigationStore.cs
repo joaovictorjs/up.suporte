@@ -2,28 +2,28 @@
 
 namespace up.suporte.Stores
 {
-	public class NavigationStore
-	{
-		private BaseViewModel _currentViewModel;
-		public BaseViewModel CurrentViewModel
-		{
-			get
-			{
-				return _currentViewModel;
-			}
+    public class NavigationStore
+    {
+        private BaseViewModel _currentViewModel;
+        public BaseViewModel CurrentViewModel
+        {
+            get
+            {
+                return _currentViewModel;
+            }
 
-			set
-			{
-				_currentViewModel = value;
-				OnCurrentViewModelChanged();
-			}
-		}
+            set
+            {
+                _currentViewModel = value;
+                OnCurrentViewModelChanged();
+            }
+        }
 
-		public event Action? CurrentViewModelChanged;
+        public event Action? CurrentViewModelChanged;
 
-		private void OnCurrentViewModelChanged()
-		{
-			CurrentViewModelChanged?.Invoke();
-		}
-	}
+        private void OnCurrentViewModelChanged()
+        {
+            CurrentViewModelChanged?.Invoke();
+        }
+    }
 }

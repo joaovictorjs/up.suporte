@@ -4,21 +4,21 @@ using up.suporte.Stores;
 
 namespace up.suporte.Views
 {
-	/// <summary>
-	/// Interaction logic for LoginView.xaml
-	/// </summary>
-	public partial class LoginView : UserControl, IPasswordStore
-	{
-		public LoginView()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for LoginView.xaml
+    /// </summary>
+    public partial class LoginView : UserControl, IPasswordStore
+    {
+        public LoginView()
+        {
+            InitializeComponent();
+        }
 
-		public SecureString Password => Pass.SecurePassword;
+        public SecureString Password => Pass.SecurePassword;
 
-		public void Dispose()
-		{
-			Password.Dispose();
-		}
-	}
+        public void Dispose()
+        {
+            Password.Dispose();
+        }
+    }
 }
