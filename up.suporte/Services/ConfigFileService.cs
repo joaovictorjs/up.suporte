@@ -23,7 +23,7 @@ namespace up.suporte.Services
 
         public void Read()
         {
-            using (StreamReader sr = new StreamReader(_path))
+            using (StreamReader sr = new StreamReader(_path, new FileStreamOptions() { Mode = FileMode.OpenOrCreate }))
             {
                 string? line;
                 while ((line = sr.ReadLine()) != null)
@@ -44,7 +44,7 @@ namespace up.suporte.Services
         {
             string[] keyValue = line.Split('=', 2);
 
-            if (keyValue.Length < 2 || string.IsNullOrEmpty(keyValue[0]) || string.IsNullOrEmpty(keyValue[1]))
+            if (keyValue.Length < 2 || string.IsNullOrEmpty(keyValue[0].Trim()) || string.IsNullOrEmpty(keyValue[1].Trim()))
             {
                 return (null, null);
             }
@@ -54,7 +54,7 @@ namespace up.suporte.Services
 
         public void Write()
         {
-            using (StreamWriter sw = new StreamWriter(_path, new FileStreamOptions() { Mode = FileMode.OpenOrCreate }))
+            using (StreamWriter sw = new StreamWriter(_path))
             {
                 sw.WriteLine("address=", _store.CurrentConfig.GetValueOrDefault("address", string.Empty));
                 sw.WriteLine("port=", _store.CurrentConfig.GetValueOrDefault("port", string.Empty));
@@ -66,8 +66,11 @@ namespace up.suporte.Services
         public bool IsOk()
         {
             return _store.CurrentConfig.ContainsKey("address")
+                && !string.IsNullOrEmpty(_store.CurrentConfig.GetValueOrDefault("address", string.Empty).Trim())
                 && _store.CurrentConfig.ContainsKey("port")
-                && _store.CurrentConfig.ContainsKey("database");
+                && !string.IsNullOrEmpty(_store.CurrentConfig.GetValueOrDefault("port", string.Empty).Trim())
+                && _store.CurrentConfig.ContainsKey("database")
+                && !string.IsNullOrEmpty(_store.CurrentConfig.GetValueOrDefault("database", string.Empty).Trim());
         }
     }
 }
