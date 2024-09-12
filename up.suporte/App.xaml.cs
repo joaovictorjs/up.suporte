@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Windows;
 using up.suporte.Services;
 using up.suporte.Stores;
 using up.suporte.ViewModels;
