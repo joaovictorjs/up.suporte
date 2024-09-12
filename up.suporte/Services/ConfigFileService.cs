@@ -56,10 +56,10 @@ namespace up.suporte.Services
         {
             using (StreamWriter sw = new StreamWriter(_path))
             {
-                sw.WriteLine("address=", _store.CurrentConfig.GetValueOrDefault("address", string.Empty));
-                sw.WriteLine("port=", _store.CurrentConfig.GetValueOrDefault("port", string.Empty));
-                sw.WriteLine("database=", _store.CurrentConfig.GetValueOrDefault("database", string.Empty));
-                sw.WriteLine("username=", _store.CurrentConfig.GetValueOrDefault("username", string.Empty));
+                sw.WriteLine($"address={_store.CurrentConfig.GetValueOrDefault("address", string.Empty)}");
+                sw.WriteLine($"port={_store.CurrentConfig.GetValueOrDefault("port", string.Empty)}");
+                sw.WriteLine($"database={_store.CurrentConfig.GetValueOrDefault("database", string.Empty)}");
+                sw.WriteLine($"username={_store.CurrentConfig.GetValueOrDefault("username", string.Empty)}");
             }
         }
 
