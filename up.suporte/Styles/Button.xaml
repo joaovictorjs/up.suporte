@@ -11,7 +11,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
+                    <Border
+                        Name="Border"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="4">
                         <Border.Background>
                             <SolidColorBrush Opacity="0.4" Color="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Background.Color}" />
                         </Border.Background>
@@ -22,6 +25,22 @@
 
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Opacity="0.4" Color="{Binding Color, Source={StaticResource ButtonDisabledBrush}}" />
+                                </Setter.Value>
+                            </Setter>
+
+                            <Setter TargetName="Border" Property="BorderBrush">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{Binding Color, Source={StaticResource ButtonDisabledBrush}}" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
