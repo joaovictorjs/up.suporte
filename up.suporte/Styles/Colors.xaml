@@ -6,4 +6,5 @@
     <SolidColorBrush x:Key="TextBoxBrush" Color="#374151" />
     <SolidColorBrush x:Key="ButtonBrush" Color="#0891b2" />
     <SolidColorBrush x:Key="IconButtonBrush" Color="#374151" />
+    <SolidColorBrush x:Key="ButtonDisabledBrush" Color="#1f2937" />
 </ResourceDictionary>
