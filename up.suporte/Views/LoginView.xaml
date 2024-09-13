@@ -43,14 +43,18 @@
                 Text="Informe suas credenciais" />
 
             <StackPanel Margin="0,32,0,0" Orientation="Vertical">
-                <TextBox ext:TextBoxExtensions.Label="Usuário" />
+                <TextBox ext:TextBoxExtensions.Label="Usuário" Text="{Binding Username}" />
 
                 <PasswordBox
                     x:Name="Pass"
                     Margin="0,16,0,0"
                     ext:PasswordBoxExtensions.Label="Senha" />
 
-                <Button Margin="0,16,0,0" Content="Entrar" />
+                <Button
+                    Margin="0,16,0,0"
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:LoginView}}}"
+                    Content="Entrar" />
             </StackPanel>
         </StackPanel>
 
