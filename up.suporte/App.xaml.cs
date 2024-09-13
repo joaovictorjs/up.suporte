@@ -24,6 +24,9 @@ namespace up.suporte
             builder.ConfigureServices(services =>
             {
                 services.AddSingleton<NavigationStore>();
+                services.AddSingleton<PgConnectionService>(s => new PgConnectionService(s.GetRequiredService<PgConnectionStore>()));
+                services.AddSingleton<PgConnectionStore>();
+                services.AddSingleton<NavigationStore>();
                 services.AddSingleton<NavigationService<ConfigureConnectionViewModel>>(
                     local => new NavigationService<ConfigureConnectionViewModel>(
                         local.GetRequiredService<NavigationStore>(),
@@ -42,8 +45,18 @@ namespace up.suporte
                         local.GetRequiredService<LoginViewModel>()
                     )
                 );
-                services.AddTransient<LoginViewModel>(local => new LoginViewModel(local.GetRequiredService<NavigationService<ConfigureConnectionViewModel>>()));
-                //services.AddTransient<ConfigureConnectionViewModel>(local => new ConfigureConnectionViewModel(local.GetRequiredService<NavigationService<LoginViewModel>>()));
+                services.AddTransient<LoginViewModel>(local =>
+                {
+                    ConfigFileStore configFileStore = new ConfigFileStore();
+                    IConfigFileService configFileService = new ConfigFileService(configFileStore);
+                    NavigationService<ConfigureConnectionViewModel> navService = local.GetRequiredService<NavigationService<ConfigureConnectionViewModel>>();
+                    return new LoginViewModel(
+                        navService,
+                        local.GetRequiredService<PgConnectionService>(),
+                        configFileService,
+                        local.GetRequiredService<PgConnectionStore>(),
+                        configFileStore);
+                });
 
                 services.AddTransient<ConfigureConnectionViewModel>(local =>
                 {
